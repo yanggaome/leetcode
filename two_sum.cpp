@@ -9,8 +9,13 @@ Given nums = [2, 7, 11, 15], target = 9,
 
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
-
 */
+
+/*
+Solution:
+use hash map<key, value>, and assign value by map[key] = value
+*/
+
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
