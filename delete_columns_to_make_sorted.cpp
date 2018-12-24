@@ -16,8 +16,13 @@ Output: 1
 Explanation: 
 After choosing D = {1}, each column ["c","d","g"] and ["a","f","i"] are in non-decreasing sorted order.
 If we chose D = {}, then a column ["b","a","h"] would not be in non-decreasing sorted order.
-
 */
+
+/*
+Solution:
+If found one column non-sorted, just delete it
+*/
+
 class Solution {
 public:
     int minDeletionSize(vector<string>& A) {
