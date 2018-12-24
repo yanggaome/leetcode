@@ -3,14 +3,11 @@ Given an array A of non-negative integers, return an array consisting of all the
 
 You may return any answer array that satisfies this condition.
 
- 
-
-Example 1:
+Example:
 
 Input: [3,1,2,4]
 Output: [2,4,3,1]
 The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.
- 
 
 Note:
 
@@ -26,7 +23,7 @@ public:
         
         for (auto& element : A) {
             
-            if (element % 2 ==0) {
+            if (element % 2 == 0) {
                 B.insert(B.begin(), element);
             }
             else {
