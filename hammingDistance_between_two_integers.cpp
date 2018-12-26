@@ -20,6 +20,12 @@ Explanation:
 The above arrows point to positions where the corresponding bits are different.
 */
 
+/*
+Solution point:
+
+familiar with bitwise operators
+*/
+
 class Solution {
 public:
     int hammingDistance(int x, int y) {
