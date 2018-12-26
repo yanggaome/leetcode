@@ -42,8 +42,7 @@ public:
                 }
             }
             if (non_dec) D.push_back(j);
-        }
-        
+        }        
         return D.size();
     }
 };
