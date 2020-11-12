@@ -12,11 +12,11 @@ class node
         node* right;
 };
 
-node::node(int val)
+node::node(int val): nodeVal(val), left(nullptr), right(nullptr)
 {
-    nodeVal = val;
-    left = nullptr;
-    right = nullptr;
+    //nodeVal = val;
+    //left = nullptr;
+    //right = nullptr;
 }
 
 node::~node()
@@ -38,17 +38,17 @@ void preOrderTran(node* root, vector<int>& result)
 }
 
 // left, self, right
-void midOrderTran(node* root, vector<int>& result)
+void inOrderTran(node* root, vector<int>& result)
 {
     if (!root)
         return;
     
-    midOrderTran(root->left, result);
+    inOrderTran(root->left, result);
     
     cout << root->nodeVal << endl;
     result.push_back(root->nodeVal);
     
-    midOrderTran(root->right, result);
+    inOrderTran(root->right, result);
 }
 
 // left, right, self
@@ -79,7 +79,7 @@ int main ()
     
     vector<int> result;
     //preOrderTran(root, result);
-    //midOrderTran(root, result);
+    //inOrderTran(root, result);
     postOrderTran(root, result);
     //for (auto x:result)
     //    cout << x << endl;
