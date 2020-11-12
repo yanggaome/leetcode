@@ -95,5 +95,18 @@ int main ()
     //    cout << x << endl;
     cout << "tree height is " << getHeight(root) << endl;
     
+    // level order traversal
+    std::queue<node*> que;
+    que.push(root);
+    while (!que.empty())
+    {
+        node* cur = que.front();
+        que.pop();
+        cout << cur->nodeVal << endl;
+        if (cur->left)
+            que.push(cur->left);
+        if (cur->right)
+            que.push(cur->right);
+    }
     return 0;
 }
