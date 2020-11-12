@@ -1,3 +1,11 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -21,7 +29,7 @@ node::node(int val): nodeVal(val), left(nullptr), right(nullptr)
 
 node::~node()
 {
-    cout << "calling destructor "<< nodeVal << endl;
+    cout << "calling destructor for node "<< nodeVal << endl;
 }
 
 // self, left, right
@@ -64,6 +72,16 @@ void postOrderTran(node* root, vector<int>& result)
     result.push_back(root->nodeVal);
 }
 
+int getHeight(node* root)
+{
+    if (!root)
+        return 0;
+    
+    int leftChildHeight = getHeight(root->left);
+    int rightChildHeight = getHeight(root->right);
+    return 1 + std::max(leftChildHeight, rightChildHeight);
+}
+
 int main ()
 {
     //      10
@@ -83,6 +101,7 @@ int main ()
     postOrderTran(root, result);
     //for (auto x:result)
     //    cout << x << endl;
+    cout << "tree height is " << getHeight(root) << endl;
     
     return 0;
 }
